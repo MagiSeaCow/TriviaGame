@@ -59,92 +59,17 @@ $(document).ready(function()
         // Start timer countdown
         timerStart();
     
-    /* My attempt to make the code "Dry". This ends up displaying only one question, and always only the last question in the array.
-    I think I need to append to a DIV some how, but in my mind, each question needs its own DIV and I can only loop for the array in JS and not
-    any of the required HTML elements*/
-    /*     for (var i = 0; i<quizQuestions.length; i++)
+        for (let i = 0; i < quizQuestions.length; i++)
         {
-            $("#question1").html("<h3>" + quizQuestions[i].question + "</h3>");
+            $("#question" + (i + 1)).html("<h3>" + quizQuestions[i].question + "</h3>");
 
-            $("#options1").html(
-                "<input type='radio' name='options1' value='0'>" + "<label>" + quizQuestions[i].answerChoices[0] + "</label>"
-                + "<input type='radio' name='options1' value='1'>" + "<label>" + quizQuestions[i].answerChoices[1] + "</label>"
-                + "<input type='radio' name='options1' value='2'>" + "<label>" + quizQuestions[i].answerChoices[2] + "</label>"
-                + "<input type='radio' name='options1' value='3'>" + "<label>" + quizQuestions[i].answerChoices[3] + "</label><br><br>"
+            $("#options" + (i + 1)).html(
+                  "<input type='radio' name='options"+ i + 1 +"' value='0'>" + "<label>" + quizQuestions[i].answerChoices[0] + "</label>"
+                + "<input type='radio' name='options"+ i + 1 +"' value='1'>" + "<label>" + quizQuestions[i].answerChoices[1] + "</label>"
+                + "<input type='radio' name='options"+ i + 1 +"' value='2'>" + "<label>" + quizQuestions[i].answerChoices[2] + "</label>"
+                + "<input type='radio' name='options"+ i + 1 +"' value='3'>" + "<label>" + quizQuestions[i].answerChoices[3] + "</label><br><br>"
                                 );
-        } */
-
-        // Display questions to the DOM, with the answer options to each question
-        // Question 1
-        $("#question1").html("<h3>" + quizQuestions[0].question + "</h3>");
-
-        $("#options1").html(
-            "<input type='radio' name='options1' value='0'>" + "<label>" + quizQuestions[0].answerChoices[0] + "</label>"
-            + "<input type='radio' name='options1' value='1'>" + "<label>" + quizQuestions[0].answerChoices[1] + "</label>"
-            + "<input type='radio' name='options1' value='2'>" + "<label>" + quizQuestions[0].answerChoices[2] + "</label>"
-            + "<input type='radio' name='options1' value='3'>" + "<label>" + quizQuestions[0].answerChoices[3] + "</label><br><br>"
-                            );
-
-        // Question 2
-        $("#question2").html("<h3>" + quizQuestions[1].question + "</h3>");
-
-        $("#options2").html(
-            "<input type='radio' name='options2' value='0'>" + "<label>" + quizQuestions[1].answerChoices[0] + "</label>"
-            + "<input type='radio' name='options2' value='1'>" + "<label>" + quizQuestions[1].answerChoices[1] + "</label>"
-            + "<input type='radio' name='options2' value='2'>" + "<label>" + quizQuestions[1].answerChoices[2] + "</label>"
-            + "<input type='radio' name='options2' value='3'>" + "<label>" + quizQuestions[1].answerChoices[3] + "</label><br><br>"
-                            );
-
-        // Question 3
-        $("#question3").html("<h3>" + quizQuestions[2].question + "</h3>");
-
-        $("#options3").html(
-            "<input type='radio' name='options3' value='0'>" + "<label>" + quizQuestions[2].answerChoices[0] + "</label>"
-            + "<input type='radio' name='options3' value='1'>" + "<label>" + quizQuestions[2].answerChoices[1] + "</label>"
-            + "<input type='radio' name='options3' value='2'>" + "<label>" + quizQuestions[2].answerChoices[2] + "</label>"
-            + "<input type='radio' name='options3' value='3'>" + "<label>" + quizQuestions[2].answerChoices[3] + "</label><br><br>"
-                            );
-
-        // Question 4
-        $("#question4").html("<h3>" + quizQuestions[3].question + "</h3>");
-
-        $("#options4").html(
-            "<input type='radio' name='options4' value='0'>" + "<label>" + quizQuestions[3].answerChoices[0] + "</label>"
-            + "<input type='radio' name='options4' value='1'>" + "<label>" + quizQuestions[3].answerChoices[1] + "</label>"
-            + "<input type='radio' name='options4' value='2'>" + "<label>" + quizQuestions[3].answerChoices[2] + "</label>"
-            + "<input type='radio' name='options4' value='3'>" + "<label>" + quizQuestions[3].answerChoices[3] + "</label><br><br>"
-                            );
-
-        // Question 5
-        $("#question5").html("<h3>" + quizQuestions[4].question + "</h3>");
-
-        $("#options5").html(
-            "<input type='radio' name='options5' value='0'>" + "<label>" + quizQuestions[4].answerChoices[0] + "</label>"
-            + "<input type='radio' name='options5' value='1'>" + "<label>" + quizQuestions[4].answerChoices[1] + "</label>"
-            + "<input type='radio' name='options5' value='2'>" + "<label>" + quizQuestions[4].answerChoices[2] + "</label>"
-            + "<input type='radio' name='options5' value='3'>" + "<label>" + quizQuestions[4].answerChoices[3] + "</label><br><br>"
-                            );
-
-        // Question 6
-        $("#question6").html("<h3>" + quizQuestions[5].question + "</h3>");
-
-        $("#options6").html(
-            "<input type='radio' name='options6' value='0'>" + "<label>" + quizQuestions[5].answerChoices[0] + "</label>"
-            + "<input type='radio' name='options6' value='1'>" + "<label>" + quizQuestions[5].answerChoices[1] + "</label>"
-            + "<input type='radio' name='options6' value='2'>" + "<label>" + quizQuestions[5].answerChoices[2] + "</label>"
-            + "<input type='radio' name='options6' value='3'>" + "<label>" + quizQuestions[5].answerChoices[3] + "</label><br><br>"
-                            );
-
-        // Question 7
-        $("#question7").html("<h3>" + quizQuestions[6].question + "</h3>");
-
-        $("#options7").html(
-            "<input type='radio' name='options7' value='0'>" + "<label>" + quizQuestions[6].answerChoices[0] + "</label>"
-            + "<input type='radio' name='options7' value='1'>" + "<label>" + quizQuestions[6].answerChoices[1] + "</label>"
-            + "<input type='radio' name='options7' value='2'>" + "<label>" + quizQuestions[6].answerChoices[2] + "</label>"
-            + "<input type='radio' name='options7' value='3'>" + "<label>" + quizQuestions[6].answerChoices[3] + "</label><br><br>"
-                            );
-
+        }
         // Added a button for the user to end the game early, if they have answered all the questions and do not want to wait for the time to expire
         $("#submit").html("<button class='btn' id='done'> Done </button>");
 
@@ -200,113 +125,24 @@ $(document).ready(function()
         $("#numVoid").html("Number of Questions Answered Omitted: " + noResponse);
     }
 
-    // Function to keep track of correct answers, wrong answers and no reponse to each question. Another DRY opportunity, but not sure how to loop the check value method.
+    // Function to keep track of correct answers, wrong answers and no reponse to each question.
     function scoreKeeper()
     {
-        var userResponse1 = $("input[name='options1']:checked").val();
-        var userResponse2 = $("input[name='options2']:checked").val();
-        var userResponse3 = $("input[name='options3']:checked").val();
-        var userResponse4 = $("input[name='options4']:checked").val();
-        var userResponse5 = $("input[name='options5']:checked").val();
-        var userResponse6 = $("input[name='options6']:checked").val();
-        var userResponse7 = $("input[name='options7']:checked").val();
-
-        // Question 1 check if answer is correct, wrong or no response
-        if (userResponse1 === undefined)
+        for (var i = 0; i < quizQuestions.length; i++)
         {
-            noResponse++;
-        }
-        else if (userResponse1 == quizQuestions[0].correctChoice)
-        {
-            correctAnswerCount++;
-        }
-        else
-        {
-            wrongAnswerCount++;
-        };
-
-        // Question 2 Check if answer is correct, wrong or no response
-        if (userResponse2 === undefined)
-        {
-            noResponse++;
-        }
-        else if (userResponse2 == quizQuestions[1].correctChoice)
-        {
-            correctAnswerCount++;
-        }
-        else
-        {
-            wrongAnswerCount++;
-        };
-        
-        // Question 3 Check if answer is correct, wrong or no response
-        if (userResponse3 === undefined)
-        {
-            noResponse++;
-        }
-        else if (userResponse3 == quizQuestions[2].correctChoice)
-        {
-            correctAnswerCount++;
-        }
-        else
-        {
-            wrongAnswerCount++;
-        };
-
-        // Question 4 Check if answer is correct, wrong or no response
-        if (userResponse4 === undefined)
-        {
-            noResponse++;
-        }
-        else if (userResponse4 == quizQuestions[3].correctChoice)
-        {
-            correctAnswerCount++;
-        }
-        else
-        {
-            wrongAnswerCount++;
-        };
-
-        // Question 5 Check if answer is correct, wrong or no response
-        if (userResponse5 === undefined)
-        {
-            noResponse++;
-        }
-        else if (userResponse5 == quizQuestions[4].correctChoice)
-        {
-            correctAnswerCount++;
-        }
-        else
-        {
-            wrongAnswerCount++;
-        };
-
-        // Question 6 Check if answer is correct, wrong or no response
-        if (userResponse6 === undefined)
-        {
-            noResponse++;
-        }
-        else if (userResponse6 == quizQuestions[5].correctChoice)
-        {
-            correctAnswerCount++;
-        }
-        else
-        {
-            wrongAnswerCount++;
-        };
-
-        // Question 7 Check if answer is correct, wrong or no response
-        if (userResponse7 === undefined)
-        {
-            noResponse++;
-        }
-        else if (userResponse7 == quizQuestions[6].correctChoice)
-        {
-            correctAnswerCount++;
-        }
-        else
-        {
-            wrongAnswerCount++;
+            var checked = $("input[name='options"+i+1+"']:checked").val();
+            if (checked === undefined)
+            {
+                noResponse++;
+            }
+            else if (checked == quizQuestions[i].correctChoice)
+            {
+                correctAnswerCount++;
+            }
+            else
+            {
+                wrongAnswerCount++;
+            };
         };
     };
 });
