@@ -16,4 +16,7 @@ The purpose of the project is to practice implementation of Javascript Logic/jQu
 
 The timer and "game" starts as soon as it is loaded in the browser.
 
+Launch Here:
+https://magiseacow.github.io/TriviaGame/
+
 Project is maintained by me (Xiao aka MagiSeaCow).
